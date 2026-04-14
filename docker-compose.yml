@@ -1,0 +1,16 @@
+services:
+  hamms-frontend:
+    container_name: hamms-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    env_file:
+      - .env
+    networks:
+      - hamms-frontend-network
+
+
+networks:
+  hamms-frontend-network:
+    name: hamms-frontend-network
